@@ -1,13 +1,14 @@
-/* Основной фон и шрифт */
+/* === БАЗОВЫЕ СТИЛИ === */
 body {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, #e0f7fa, #f5f5f5);
   padding: 30px;
   margin: 0;
   color: #333;
+  font-size: 16px;
 }
 
-/* Заголовок */
+/* === ЗАГОЛОВОК === */
 h1 {
   text-align: center;
   color: #00695c;
@@ -15,7 +16,7 @@ h1 {
   font-size: 2.5rem;
 }
 
-/* Контейнер чата */
+/* === КОНТЕЙНЕР ЧАТА === */
 #chat-box {
   max-width: 700px;
   margin: auto;
@@ -26,7 +27,7 @@ h1 {
   animation: fadeInUp 0.6s ease;
 }
 
-/* История сообщений */
+/* === ИСТОРИЯ СООБЩЕНИЙ === */
 #history {
   max-height: 400px;
   overflow-y: auto;
@@ -42,13 +43,12 @@ h1 {
 #history::-webkit-scrollbar {
   width: 8px;
 }
-
 #history::-webkit-scrollbar-thumb {
   background-color: #80cbc4;
   border-radius: 6px;
 }
 
-/* Сообщения */
+/* === СООБЩЕНИЯ === */
 .message {
   padding: 12px 16px;
   margin: 8px 0;
@@ -59,26 +59,23 @@ h1 {
   animation: slideIn 0.3s ease;
   word-break: break-word;
 }
-
 .message.user {
   margin-left: auto;
   background-color: #d0f8ce;
   border-bottom-right-radius: 0;
 }
-
 .message.bot {
   margin-right: auto;
   background-color: #e1f5fe;
   border-bottom-left-radius: 0;
 }
-
 .message.error {
   background-color: #ffcdd2;
   color: #b71c1c;
   font-weight: bold;
 }
 
-/* Анимации */
+/* === АНИМАЦИИ === */
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -89,7 +86,6 @@ h1 {
     transform: translateY(0);
   }
 }
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -101,29 +97,50 @@ h1 {
   }
 }
 
-/* Контейнер ввода */
+/* === ВВОД И КНОПКИ === */
 .input-container {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 input[type="text"] {
   flex: 1;
-  padding: 14px;
-  font-size: 16px;
+  padding: 15px;
+  font-size: 14px;
   border: 1px solid #b0bec5;
   border-radius: 10px;
   outline: none;
   transition: border-color 0.3s;
 }
-
 input[type="text"]:focus {
   border-color: #26a69a;
 }
+/* === ВВОД И КНОПКИ === */
+.input-container {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
 
-/* Кнопки */
+.input-container input {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap; /* ❗️ не переносит текст */
+  text-overflow: ellipsis; /* ❗️если текст длинный — троеточие */
+}
+
+
+/* === КНОПКИ === */
 button {
   padding: 12px 20px;
+  font-size: 16px;
   background: linear-gradient(to right, #26a69a, #00796b);
   color: white;
   border: none;
@@ -132,20 +149,12 @@ button {
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
 }
-
 button:hover {
   background: linear-gradient(to right, #00796b, #004d40);
   transform: scale(1.03);
 }
 
-/* Метка времени */
-.timestamp {
-  font-size: 0.75em;
-  color: gray;
-  margin-left: 10px;
-}
-
-
+/* === ДРУГИЕ СЕКЦИИ === */
 .subtitle {
   text-align: center;
   font-size: 18px;
@@ -160,7 +169,6 @@ button:hover {
   font-size: 16px;
   animation: fadeIn 1s ease-in-out;
 }
-
 #role {
   padding: 8px 12px;
   border-radius: 8px;
@@ -170,10 +178,7 @@ button:hover {
   cursor: pointer;
 }
 
-
-
-
-
+/* === ФУТЕР === */
 #footer {
   text-align: center;
   padding: 20px;
@@ -183,23 +188,47 @@ button:hover {
   margin-top: 40px;
   animation: fadeIn 1s ease-in-out;
 }
-
 #footer .qazaqai {
   font-weight: bold;
   color: #6c63ff;
 }
 
-
-
-
+/* === ЛОГОТИП === */
 .logo-container {
   text-align: center;
   margin-top: 20px;
 }
-
 .site-logo {
   width: 250px;
   max-width: 100%;
   height: auto;
   object-fit: contain;
 }
+
+/* === АДАПТИВНОСТЬ === */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  #chat-box {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .input-container {
+    flex-direction: column;
+  }
+
+  input[type="text"],
+  button {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
