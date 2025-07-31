@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='black'/><text x='50%' y='65%' font-size='45' fill='white' text-anchor='middle'>QAI</text></svg>">
+
+  <title>QazaqAI 🤖</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/script.js" defer></script>
+</head>
+<body>
+  <div class="logo-container">
+  <img src="/static/logo5.png" alt="QazaqAI Logo" class="site-logo">
+</div>
+
+  <p class="subtitle">Сенің виртуалды досың, кеңесшің және көмекшің</p>
+
+<div id="role-select-container">
+  <label for="role">👤 Таңдаңыз:</label>
+  <select id="role">
+    <option value="default">🤖 Әдеттегі AI</option>
+    <option value="psychologist">🧠 Психолог</option>
+    <option value="teacher">📚 Ұстаз</option>
+    <option value="wise">🧙 Данагөй</option>
+    <option value="friend">💬 Дос</option>
+  </select>
+</div>
+
+  <div id="chat-box">
+    <div id="history"></div>
+
+    <div class="input-container">
+      <input type="text" id="question" placeholder="Сұрағыңызды жазыңыз немесе айтыңыз..." />
+      <button onclick="sendQuestion()">Жіберу</button>
+      <button id="mic-button">🎤 Микрофон</button>
+    </div>
+  </div>
+  
+
+</body>
+<footer id="footer">
+  <p>Made with 🤍 by <strong>Gulsezim Baibolatova</strong> · Creator of <span class="qazaqai">QazaqAI</span> 🤖</p>
+</footer>
+
+</html>

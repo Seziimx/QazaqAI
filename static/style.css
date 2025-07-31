@@ -1,0 +1,205 @@
+/* Основной фон и шрифт */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #f5f5f5);
+  padding: 30px;
+  margin: 0;
+  color: #333;
+}
+
+/* Заголовок */
+h1 {
+  text-align: center;
+  color: #00695c;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+/* Контейнер чата */
+#chat-box {
+  max-width: 700px;
+  margin: auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.6s ease;
+}
+
+/* История сообщений */
+#history {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  scrollbar-width: thin;
+  scrollbar-color: #b2dfdb #e0f2f1;
+}
+
+#history::-webkit-scrollbar {
+  width: 8px;
+}
+
+#history::-webkit-scrollbar-thumb {
+  background-color: #80cbc4;
+  border-radius: 6px;
+}
+
+/* Сообщения */
+.message {
+  padding: 12px 16px;
+  margin: 8px 0;
+  border-radius: 12px;
+  position: relative;
+  max-width: 85%;
+  line-height: 1.5;
+  animation: slideIn 0.3s ease;
+  word-break: break-word;
+}
+
+.message.user {
+  margin-left: auto;
+  background-color: #d0f8ce;
+  border-bottom-right-radius: 0;
+}
+
+.message.bot {
+  margin-right: auto;
+  background-color: #e1f5fe;
+  border-bottom-left-radius: 0;
+}
+
+.message.error {
+  background-color: #ffcdd2;
+  color: #b71c1c;
+  font-weight: bold;
+}
+
+/* Анимации */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Контейнер ввода */
+.input-container {
+  display: flex;
+  gap: 10px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 14px;
+  font-size: 16px;
+  border: 1px solid #b0bec5;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #26a69a;
+}
+
+/* Кнопки */
+button {
+  padding: 12px 20px;
+  background: linear-gradient(to right, #26a69a, #00796b);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(to right, #00796b, #004d40);
+  transform: scale(1.03);
+}
+
+/* Метка времени */
+.timestamp {
+  font-size: 0.75em;
+  color: gray;
+  margin-left: 10px;
+}
+
+
+.subtitle {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+#role-select-container {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+#role {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  font-size: 16px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+
+
+
+
+#footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #999;
+  border-top: 1px solid #eee;
+  margin-top: 40px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+#footer .qazaqai {
+  font-weight: bold;
+  color: #6c63ff;
+}
+
+
+
+
+.logo-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.site-logo {
+  width: 250px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
