@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
-API_KEY = os.getenv("OPENROUTER_API_KEY")
+API_KEY = os.getenv("FW_API_KEY")
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 headers = {
@@ -24,7 +24,7 @@ def ask():
     user_message = data.get("message", "")
 
     payload = {
-        "model": "z-ai/glm-4.5-air:free",
+        "model": "accounts/fireworks/models/llama-v3-70b-instruct",
         "messages": [
             {"role": "system","content": "Сен тек қазақ тілінде жауап беретін көмекші ботсың. Ешқашан басқа тілде жауап берме. Түсінікті, нақты, қысқа жауап бер. Ешқандай ағылшын немесе орыс сөзі қолданба."},
             {"role": "user", "content": user_message}
